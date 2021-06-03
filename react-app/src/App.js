@@ -41,7 +41,7 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} >
+        <ProtectedRoute path="/cart" exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
