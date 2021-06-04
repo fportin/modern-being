@@ -1,1 +1,16 @@
 /* TODO Add site wide styles */
+html, body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    /* height: 100vh;
+    width: 100vw; */
+    /* overflow: hidden; */
+    /* color: white; */
+    color: black;
+    font-family: 'MuseoModerno', cursive;
+}
+
+* {
+    box-sizing: border-box;
+}

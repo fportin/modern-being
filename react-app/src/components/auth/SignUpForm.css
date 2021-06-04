@@ -1,0 +1,141 @@
+.signup-page__container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* border: 1px solid red; */
+    height: 100vh;
+}
+
+.signup-form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(191, 191, 191, 0.5);
+    border-radius: 15px;
+    width: 550px;
+    height: 600px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.signup-page__greeting {
+    margin-top: 50px;
+    font-size: 40px;
+    margin-bottom: 80px;
+    /* border: 1px solid blue; */
+}
+
+.signup-page__errors {
+    /* border: 1px solid red; */
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    top: 130px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-username-input-container,
+.signup-email-input-container,
+.signup-password-input-container,
+.signup-repeat_password-input-container {
+    /* border: 1px solid red; */
+    display: flex;
+    margin: 10px;
+}
+
+.name-signup-label,
+.email-signup-label,
+.password-signup-label,
+.repeat_password-signup-label {
+    font-size: 20px;
+    position: absolute;
+    pointer-events: none;
+    padding: 10px 10px;
+    color: #808080;
+    transition: all ease-in 0.25s;
+}
+
+.name-signup-input,
+.email-signup-input,
+.password-signup-input,
+.repeat_password-signup-input {
+    height: 50px;
+    width: 350px;
+    padding: 25px 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 16px;
+}
+
+.name-signup-input::placeholder,
+.email-signup-input::placeholder,
+.password-signup-input::placeholder,
+.repeat_password-signup-input::placeholder {
+    color: transparent;
+}
+
+.name-signup-input:focus + .name-signup-label,
+.name-signup-input:not(:placeholder-shown) + .name-signup-label,
+.email-signup-input:focus + .email-signup-label,
+.email-signup-input:not(:placeholder-shown) + .email-signup-label,
+.password-signup-input:focus + .password-signup-label,
+.password-signup-input:not(:placeholder-shown) + .password-signup-label,
+.repeat_password-signup-input:focus + .repeat_password-signup-label,
+.repeat_password-signup-input:not(:placeholder-shown) + .repeat_password-signup-label {
+    font-size: 12px;
+    padding: 0px 10px;
+}
+
+.name-signup-input:focus + .name-signup-label,
+.name-signup-input:focus:not(:placeholder-shown) + .name-signup-label,
+.email-signup-input:focus + .email-signup-label,
+.email-signup-input:focus:not(:placeholder-shown) + .email-signup-label,
+.password-signup-input:focus + .password-signup-label,
+.password-signup-input:focus:not(:placeholder-shown) + .password-signup-label,
+.repeat_password-signup-input:focus + .repeat_password-signup-label,
+.repeat_password-signup-input:focus:not(:placeholder-shown) + .repeat_password-signup-label {
+    background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
+    background-clip: text;
+    color: transparent;
+
+}
+
+.name-signup-input:focus,
+.email-signup-input:focus,
+.password-signup-input:focus,
+.repeat_password-signup-input:focus {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff) 1;
+}
+
+.signup-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 200px;
+    font-family: inherit;
+    border: 2px solid #808080;
+}
+
+.signup-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
+    color: black;
+}
+
+.signup-btn:active {
+    color: white;
+}
