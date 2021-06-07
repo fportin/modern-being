@@ -629,7 +629,6 @@ def seed_products():
                 ]
 
     [db.session.add(item) for item in demo]
-    # db.session.add(demo)
 
     db.session.commit()
 
