@@ -9,13 +9,13 @@ def seed_products():
                 description="The Apple M1 chip gives the 13‑inch MacBook Pro speed and power beyond belief. With up to 2.8x CPU performance. Up to 5x the graphics speed. Apple's most advanced Neural Engine for up to 11x faster machine learning. And up to 20 hours of battery life — the longest of any Mac ever. It’s the most popular pro notebook, taken to a whole new level.",
                 brand='Apple', 
                 price=1499.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/MacBook-Pro-13”.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/MacBook-Pro-13.jpeg'
                 ),
         Product(name='MacBook Pro 16”', 
                 description="Designed for those who defy limits and change the world, the 16-inch MacBook Pro is by far the most powerful notebook Apple has ever made. With an immersive Retina display, superfast processors, advanced graphics, the largest battery capacity ever in a MacBook Pro, Magic Keyboard, and massive storage, it's the ultimate pro notebook for the ultimate user.",
                 brand='Apple', 
                 price=2799.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/MacBook-Pro-16”.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/MacBook-Pro-16.jpeg'
                 ),        
         Product(name='MacBook Air', 
                 description="Apple's thinnest, lightest notebook, completely transformed by the Apple M1 chip. CPU speeds up to 3.5x faster. GPU speeds up to 5x faster. With Apple's most advanced Neural Engine for up to 9x faster machine learning. The longest battery life ever in a MacBook Air. And a silent, fanless design. This much power has never been this ready to go.",
@@ -51,13 +51,13 @@ def seed_products():
                 description="With iconic designs, high-performance gaming and premium features, Alienware delivers the most immersive experiences.",
                 brand='Dell', 
                 price=3399.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/ALIENWARE-X15-R1-GAMING-LAPTOP.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/Alienware-x15-R1.jpeg'
                 ),        
-        Product(name='G15 Gaming Laptop', 
+        Product(name='G5 15 5500', 
                 description="G Series equips you with all the essentials you need to experience split-second responsiveness and immersive gameplay.",
                 brand='Dell', 
-                price=1399.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/G15-Gaming-Laptop.jpg'
+                price=1269.99, 
+                photo='d2btt1sxcdpl0n.cloudfront.net/laptops/Dell-G5-15-5500.jpeg'
                 ),        
         Product(name='Surface Pro X', 
                 description="With Microsoft SQ® 1 and new Microsoft SQ® 2 chipsets, blazing-fast LTE connectivity, their thinnest Surface features two USB-C® ports and a stunning, virtually edge-to-edge 13” touchscreen, plus new choice of colors. Surface Pro X Keyboard and rechargeable Surface Slim Pen sold separately.",
@@ -149,19 +149,19 @@ def seed_products():
                 description="Feel fully immersed Ultra-WQHD resolution with 34\" curved display Immerse yourself in detail. Within games, movies or design projects, surround yourself with the 34\" ultra-wide curved display featuring a 21:9 aspect ratio. Ultra-WQHD provides the simplest way to maximize your screen real estate and experience truly seamless multitasking on just one screen.",
                 brand='Samsung', 
                 price=599.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/34"-S65UA-Ultra-WQHD-High-Resolution-Monitor-with-1000R-curvature-and-USB-C.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/34-S65UA-Ultra-WQHD.jpg'
                 ),        
         Product(name='49" CRG9 Dual QHD Curved QLED Gaming Monitor', 
                 description="Equivalent to two 27-inch QHD displays side by side. Samsung's 49-inch CRG9 Curved QLED Gaming Monitor immerses you in detail and color. AMD Radeon FreeSync™ 2 technology and 120Hz refresh rate provide crisp images, even in fast motion scenes. A spectacle to behold, the 49-inch CRG9 is built to help you win more and do more.",
                 brand='Samsung', 
                 price=1199.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/49"-CRG9-Dual-QHD-Curved-QLED-Gaming-Monitor.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/49-CRG9-Dual-QHD.jpg'
                 ),        
         Product(name='32" Odyssey G7 Gaming Monitor', 
                 description="Make your gaming world, more lifelike than ever before. Packing in 1.7 times the pixel density of Full HD, WQHD resolution boasts incredibly detailed, pin-sharp images. Experience a fuller view with more space to take in all the action.",
                 brand='Samsung', 
                 price=799.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/32"-Odyssey-G7-Gaming-Monitor.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/32-Odyssey-G7.jpg'
                 ),        
         Product(name='OMEN X Emperium 65-inch Big Format Gaming Monitor', 
                 description="Brace for impact—because at-home gaming and entertainment will never be the same. With stunning 4K[1] HDR visuals, NVIDIA® G-SYNC® Ultimate[6] with blazing-fast refresh rates up to 144Hz[7], and built-in NVIDIA® SHIELD™, this cutting-edge display brings your entire living room to life. Game, stream entertainment, and lose yourself in a brilliant 64.5” diagonal screen—when it comes to immersion, it doesn’t get much bigger, or better, than this.",
@@ -185,19 +185,19 @@ def seed_products():
                 description="See your way to victory with the innovative 38GL950G-B UltraGear gaming monitor, providing the crispest visuals and the sharpest clarity. You can experience breath-taking immersion on a Nano IPS display with a 1ms response time.",
                 brand='LG', 
                 price=1599.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/38”-UltraGear™-21-9-Curved-WQHD+-Nano-IPS-1ms-144Hz-HDR-400-Sphere-Lighting-2.0-3-Side-Virtually-Borderless.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/38-UltraGear.jpeg'
                 ),        
         Product(name='34" Class 21:9 UltraWide® 5K2K Nano IPS LED Monitor with HDR 600 (34" Diagonal)', 
                 description="Multitaskers can now work in a generous 5:9 area while simultaneously viewing a 16:9 4K video on the same screen. The 5K2K 21:9 display of the 34WK95U offers 5120 x 2160 resolution optimized for video editors, programmers and developers, with convenient single-cable Thunderbolt® 3 connectivity.",
                 brand='LG', 
                 price=1499.99, 
-                photo="d2btt1sxcdpl0n.cloudfront.net/monitors/34''-Class-21-9-UltraWide®-5K2K-Nano-IPS-LED-Monitor-with-HDR-600-(34''-Diagonal).jpeg"
+                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/34-Class-21-9-UltraWide.jpeg'
                 ),        
         Product(name='32" Class UltraFine™ 4K UHD LED Monitor with Thunderbolt™ 3 (31.5" Diagonal)', 
                 description="UHD 4K resolution displays breathtaking clarity and fine detail with four times the resolution of Full HD. Plus this monitor is designed to work with compatible calibration devices* that ensure precise adjustments of color, brightness and more.",
                 brand='LG', 
                 price=1299.99, 
-                photo="d2btt1sxcdpl0n.cloudfront.net/monitors/32''-Class-UltraFine™-4K-UHD-LED-Monitor-with-Thunderbolt™-3-(31.5''-Diagonal).jpeg"
+                photo='d2btt1sxcdpl0n.cloudfront.net/monitors/32-Class-UltraFine.jpeg'
                 ),        
         #Headphones
         Product(name='Bose Noise Cancelling Headphones 700', 
@@ -265,7 +265,7 @@ def seed_products():
                 description="Get rich, room-filling sound with Sonos One, and control it with your voice, the Sonos app, Apple AirPlay 2, and more.",
                 brand='Sonos', 
                 price=199.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/One-(2nd Gen).png'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/One-2nd-Gen.png'
                 ),        
         Product(name='Move', 
                 description="Get brilliant sound anywhere with the weatherproof and drop-resistant Move. Control with your voice, the Sonos app, and Apple AirPlay 2 at home, and stream via Bluetooth® when WiFi isn't available.",
@@ -277,7 +277,7 @@ def seed_products():
                 description="HomePod is a breakthrough speaker that adapts to its location and delivers high-fidelity audio wherever it’s playing. Together with Apple Music and Siri, it creates an entirely new way for you to discover and interact with music at home. And it can help you and your whole family with everyday tasks — and control your smart home — all with just your voice.",
                 brand='Apple', 
                 price=299.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/HomePod.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/Home-Pod.jpeg'
                 ),        
         Product(name='HomePod mini', 
                 description="Jam-packed with innovation, HomePod mini delivers unexpectedly big sound for a speaker of its size. At just 3.3 inches tall, it takes up almost no space but fills the entire room with rich 360‑degree audio that sounds amazing from every angle.",
@@ -289,13 +289,13 @@ def seed_products():
                 description="Talk about well-rounded. Echo combines premium sound, a built-in Zigbee smart home hub, and a temperature sensor. Powerful speakers deliver clear highs, dynamic mids, and deep bass for rich, detailed sound that adapts to any room.",
                 brand='Amazon', 
                 price=79.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/Echo-(4th-Gen).jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/Echo-4th-Gen.jpg'
                 ),        
         Product(name='Echo Studio', 
                 description="You've never heard an Echo like this before. Echo Studio creates an immersive, 3-dimensional soundscape, wrapping you in studio-quality audio from every direction.",
                 brand='Amazon', 
                 price=199.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/Echo-Studio.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-speakers/Echo-studio.jpeg'
                 ),        
         Product(name='Nest Audio', 
                 description="Nest Audio adapts to your environment and whatever you’re listening to. So music sounds better. And news, radio, and audiobooks sound even clearer.",
@@ -326,13 +326,13 @@ def seed_products():
                 description="Apple Watch Series 6 lets you measure your blood oxygen level with a revolutionary new sensor and app. Take an ECG from your wrist. See your fitness metrics on the enhanced Always-On Retina display, now 2.5x brighter outdoors when your wrist is down. Set a bedtime routine and track your sleep. And reply to calls and messages right from your wrist. It’s the ultimate device for a healthier, more active, more connected life.",
                 brand='Apple', 
                 price=429.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-watches/Apple-Watch-Series-6-(GPS)-44mm.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-watches/Apple-Watch-Series-6.jpeg'
                 ),        
         Product(name='Apple Watch Nike SE (GPS) 44mm', 
                 description="With Apple Watch Nike SE, you can track your workouts and listen to Audio Guided Runs with the Nike Run Club app. Sync music for motivation to your watch. Turn on Nike Twilight Mode for enhanced visibility. And choose from exclusive Nike watch faces and bands.",
                 brand='Apple', 
                 price=309.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-watches/Apple-Watch-Nike-SE-(GPS)-44mm.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-watches/Apple-Watch-Nike-SE.jpeg'
                 ),        
         Product(name='Fēnix 6X Pro Solar GPS/GLONASS/Galileo Watch', 
                 description="Keep track of your fitness progress with this Garmin fenix 6X Pro Solar multisport GPS watch. The satellite navigation gives you the confidence to venture into paths less beaten, while the solar charging capability extends the battery life when outdoors. This Garmin fenix 6X Pro Solar multisport GPS watch features pace guidance assistance to keep you on your toes.",
@@ -374,7 +374,7 @@ def seed_products():
                 description="Tech for real life. This 45mm Gen 5 LTE touchscreen smartwatch features a black silicone strap, phone-free calling functionality, 8GB storage capacity and three smart battery modes to extend battery life for multiple days. Fossil Gen 5 LTE smartwatches work exclusively with Verizon branded Android phones (not unlocked phones) on the Verizon Network with qualified Numbershare data plan. NumberShare is required to activate service on LTE smartwatches. Numbershare is available with an eligible Verizon monthly plan. Adding a smartwatch to your Verizon data plan will incur additional monthly charges. Customers must have a compatible Android Smartphone (4G or 5G) active on their Verizon account. Compatible Android smartphone must have OS 6.0 or later, excluding Go edition, with an updated version of the MVS app \"My Verizon Services\" (v.1.0.104.2 or later) and must be HD voice capable, have HD voice turned On and be on an eligible plan. LTE smartwatches do not support a standalone activation, only activation via NumberShare is eligible. For more detailed information, please refer to your Verizon Connected Devices plan. Fossil Gen 5 LTE Smartwatches powered with Wear OS by Google are only compatible with Verizon Android™ phones on the Verizon network. Wear OS by Google and other related marks are trademarks of Google LLC. Supported features may vary between platforms. To avoid damage to your watch, only use with included charger. Do not use a USB hub, USB splitter, USB y-cable, battery pack or other peripheral device to charge. Product should be kept more than 20cm away from implanted medical devices to minimize potential for RF interference. See product insert for full details.",
                 brand='Fossil', 
                 price=349.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-watches/Fossil-Gen-5-LTE-Smartwatch-(Cellular)-45mm.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-watches/Fossil-Gen-5-LTE-Smartwatch.jpeg'
                 ),        
         Product(name='Fossil - Gen 5e Smartwatch 44mm Leather', 
                 description="Tech for real life. This 44mm Gen 5E touchscreen smartwatch features a smoke case and brown leather strap, speaker functionality, 4GB storage capacity and three smart battery modes to extend battery life for multiple days. Smartwatches powered with Wear OS by Google are compatible with iPhone® and Android™ phones. Wear OS by Google and other related marks are trademarks of Google LLC. Supported features may vary between platforms. To avoid damage to your watch, only use with included charger. Do not use a USB hub, USB splitter, USB y-cable, battery pack or other peripheral device to charge. Product should be kept more than 20cm away from implanted medical devices to minimize potential for RF interference. See product insert for full details.",
@@ -405,7 +405,7 @@ def seed_products():
                 description="Introducing Galaxy S21 Ultra 5G. The highest resolution photos and video on a smartphone. Galaxy's fastest processor yet. A battery that goes all-day—and then some. First ever S Pen compatibility. A striking new design. It's an Ultra that easily lives up to its name.",
                 brand='Samsung', 
                 price=1249.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/smart-phones/Galaxy-S21-Ultra-5G.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/smart-phones/Galaxy-S21-Ultra5G.jpg'
                 ),        
         Product(name='Pixel 5 5G 128GB', 
                 description="What happens when you bring together the ultimate Google phone and the speed of 5G?* You get Pixel 5. The super fast Google phone at a helpful price.",
@@ -466,7 +466,7 @@ def seed_products():
                 description="Get immersed on the Tab S7+'s  amazing 12.4 inch Super AMOLED and the 120Hz refresh rate for smooth viewing experiences.Rich audio and 3D surround sound with Quad speakers by AKG and Dolby ATMOS. Plus, the biggest leap in S Pen responsiveness for true writing experience.",
                 brand='Samsung', 
                 price=1049.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Galaxy-Tab-S7+,128GB.jpg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Galaxy-Tab-S7-plus.jpg'
                 ),        
         Product(name='Galaxy Tab A 10.1, 128GB', 
                 description="Minimal bezel. Maximum view. Watch, stream and browse on a 10.1\" Full HD corner-to-corner display. Big sound for big entertainment. The perfect complement to a wide, immersive picture, Dolby Atmos surround sound fills the room with cinematic clarity.",
@@ -484,19 +484,19 @@ def seed_products():
                 description="At your desk, on the couch, or out in the yard, Surface Pro 7 adapts to the way you work with laptop-to-tablet versatility. And now, it delivers more power than ever, with a laptop-class Intel® Core™ processor, all-day battery¹, Instant On, and improved graphics — plus more multitasking connections, including both USB-C® and USB-A ports.",
                 brand='Microsoft', 
                 price=1199.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Surface-Pro-7-12.3"-Touch-Screen-Intel-Core-i5-8GB-Memory-256GB-SSD.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Surface-Pro-7-12.3.jpeg'
                 ),        
         Product(name='Surface Go 2 - 10.5" Touch-Screen - Intel Core M - 8GB - 128GB SSD - WiFi + 4G LTE', 
                 description="Your perfect everyday companion. New 10.5\" Surface Go 2 is perfect for keeping up and winding down - delivering tablet portability with laptop versatility, long battery life, a stunning touchscreen, and Windows security for the whole family. Browse, shop, and manage email with ease, relax with your favorite TV shows, and much more.",
                 brand='Microsoft', 
                 price=729.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Surface-Go-2-10.5"-Touch-Screen-Intel-Core-M-8GB-128GB-SSD-WiFi+4G-LTE.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Surface-Go-2-10.5.jpeg'
                 ),        
         Product(name='Kindle Oasis E-Reader + Cellular - 7" - 32GB', 
                 description="Indulge your inner bookworm with this 32GB AT&T Amazon Kindle Oasis e-reader. The backlit touchscreen with adjustable warm light provides a realistic reading experience, and the intuitive interface makes it easy to find new books to read. Integrated WAN and Bluetooth 4.1 connectivity lets this Amazon Kindle Oasis e-reader download titles and stream Audible audiobooks to wireless headphones.",
                 brand='Amazon', 
                 price=349.99, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Kindle-Oasis-E-Reader+Cellular-7"-32GB.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/tablets/Kindle-Oasis-E-Reader.jpeg'
                 ),        
         Product(name='Wacom - Cintiq Pro 24 – 23.6” 4K Creative Pen and Touch Display', 
                 description="Generate the highest quality art with this Wacom Cintiq Pro 24-inch tablet. Every movement and pressure change of your hand is flawlessly captured by the pen technology, and colors come to life on the 4K screen. The natural tilt support ensures a realistic writing experience on this Wacom Cintiq Pro 24-inch tablet.",
@@ -521,7 +521,7 @@ def seed_products():
                 description="HoloLens 2 offers the most comfortable and immersive mixed reality experience available-enhanced by the reliability, security, and scalability of Azure.",
                 brand='Microsoft', 
                 price=3500.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/ar:vr-glasses/HoloLens-2.png'
+                photo='d2btt1sxcdpl0n.cloudfront.net/ar:vr-glasses/HoloLens2.png'
                 ),        
         Product(name='dynaEdge', 
                 description="The dynaEdge™ AR Smart Glasses enable multiple usage scenarios, including See-What-I-See, Remote Expert, Document Retrieval, Workflow Instructions and Real-Time Data Capture, making it the enterprise solution for tomorrow—starting today.",
@@ -551,7 +551,7 @@ def seed_products():
                 description="Glass is a small, lightweight wearable computer with a transparent display for hands-free work.",
                 brand='Google', 
                 price=1167.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/ar:vr-glasses/Glass.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/ar:vr-glasses/Glass-2.jpg'
                 ),        
         Product(name='X2 Mixed Reality Glasses', 
                 description="Lightweight mixed reality glasses. At 9.8 ounces, the X2 Mixed Reality Glasses fit a wide field of view, contain powerful sensors, and come with the VisionEye SLAM SDK into an exceptionally minimalistic form factor.",
@@ -570,7 +570,7 @@ def seed_products():
                 description="The KAI is an intuitive device capable of tracking the slightest movements of your wrist and all four fingers to recognize gestures. It then processes these gestures on-board, allowing you to interact with your digital world easily. Virtual reality, Gaming, Presentations, Hardware Control & so on… The applications of the Kai are virtually endless.",
                 brand='Vicara', 
                 price=150.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/gesture&immersion/Kai-Gesture-Controller.png'
+                photo='d2btt1sxcdpl0n.cloudfront.net/gesture&immersion/Kai-Gesture.png'
                 ),        
         Product(name='NeoRhythm', 
                 description="NeoRhythm is a wearable technology using PEMF to entrain your brain. It has multiple programs for improved sleep, theta meditation, deep relaxation, improved focus, pain control, enhancing mental capacity, and energy and vitality.",
@@ -602,11 +602,11 @@ def seed_products():
                 price=279.00, 
                 photo='d2btt1sxcdpl0n.cloudfront.net/gesture&immersion/Neeuro’s-Revolutionary-Brainwave-Sensing-Headband.jpeg'
                 ),        
-        Product(name='Improve Focus, Sleep, Meditation and Learning Processes', 
+        Product(name='Elf Emmit - Improve Focus, Sleep, Meditation and Learning Processes', 
                 description="ELF emmit is a digital metronome which you control, choosing your preferred state of mind AND BODY by allowing the device to suggest how your mind should behave and the rhythm at which it operates. Elf emmit is a personal assistant which coaxes our minds and bodies to work as we would like them to.",
                 brand='Elf Emmit', 
                 price=199.00, 
-                photo='d2btt1sxcdpl0n.cloudfront.net/gesture&immersion/Improve-Focus,-Sleep,-Meditation-and-Learning-Processes.jpeg'
+                photo='d2btt1sxcdpl0n.cloudfront.net/gesture&immersion/Elf-Emmit.jpeg'
                 ),        
         Product(name='Pegasi Glasses', 
                 description="PEGASI glasses is our first “closed-loop” sleep quality optimization product. By analysis of big data from different human groups on the Health Cloud platform, customized and personalized sleep quality improving protocols are offered.",

@@ -1,9 +1,14 @@
 .front-page__container {
     box-sizing: border-box;
     display: flex;
-    height: 100vh;
-    background-color: whitesmoke;
+    height: fit-content;
+    background-color: white;
     /* border: 1px solid red; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    padding: 3%;
+    gap: 3%;
 }
 
 .front-logo__container {
