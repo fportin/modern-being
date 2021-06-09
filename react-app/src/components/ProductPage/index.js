@@ -20,19 +20,18 @@ function ProductPage() {
     const handleAdd = productId => (e) => {
         e.preventDefault()
         const currentCart = localStorage.getItem('cart')
-        let quantity = 0
-        let data = `{${productId}: ${quantity}}`
+        let quantity = 1
+        let data = {[productId]: quantity}
         if (currentCart) {
             data = JSON.parse(currentCart)
-            console.log(data)
-            let newData = data.data
-            // console.log(data.data[`${productId}`])
-            console.log("NEW", newData.productId)
-            // localStorage.setItem('cart', JSON.stringify([JSON.parse(currentCart), `{${productId}: ${quantity}}`]))
+            if (data[`${productId}`]) {
+                data[`${productId}`] += 1
+            } else {
+                data[`${productId}`] = quantity
+            }
+            localStorage.setItem('cart', JSON.stringify(data))
         } else {
-            quantity++
-            // localStorage.setItem('cart', JSON.stringify(`{${productId}: ${quantity}}`))
-            localStorage.setItem('cart', JSON.stringify({data: `{${productId}: ${quantity}}`}))
+            localStorage.setItem('cart', JSON.stringify(data))
         }
     }
 

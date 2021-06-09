@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, session
+from flask import Blueprint, jsonify, session, request
 from app.models import db, Product, Category
 
 product_routes = Blueprint('product', __name__)
@@ -14,3 +14,12 @@ def get_products(categoryId):
 def get_product(productId):
     product = db.session.query(Product).filter(Product.id == productId).first()
     return product.to_dict()
+
+@product_routes.route('/cart', methods=['POST'])
+def get_cart_products():
+    data = request.json
+    product_ids_cart = data['productsArr']
+    product_instance_list = []
+    for product_id in product_ids_cart:
+        product_instance_list.append(db.session.query(Product).filter(Product.id == product_id).first())
+    return { "matchingProducts": [product.to_dict() for product in product_instance_list]}

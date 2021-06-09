@@ -1,6 +1,7 @@
 // constants
 const SET_PRODUCT = "products/SET_PRODUCT";
 const SHOW_PRODUCTS = "products/SHOW_PRODUCTS";
+const SHOW_CART_PRODUCTS = "products/SHOW_CART_PRODUCTS";
 
 const setProduct = (product) => {
     return {
@@ -13,6 +14,13 @@ const showProducts = (allProducts) => {
     return {
         type: SHOW_PRODUCTS,
         allProducts
+    }
+}
+
+const showCartProducts = (cartProducts) => {
+    return {
+        type: SHOW_CART_PRODUCTS,
+        cartProducts
     }
 }
 
@@ -37,8 +45,27 @@ export const getProduct = (productId) => async (dispatch) => {
     }
 }
 
+export const getCartProducts = (productsArr) => async (dispatch) => {
+    const res = await fetch(`api/products/cart`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            productsArr,
+        }),
+    });
 
-const initialState = { product: null, allProducts: null };
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(showCartProducts(data));
+    }
+
+    return res;
+}
+
+
+const initialState = { product: null, allProducts: null, cartProducts: null };
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -51,6 +78,11 @@ const productReducer = (state = initialState, action) => {
             return {
                 ...state,
                 product: action.product
+            };
+        case SHOW_CART_PRODUCTS:
+            return {
+                ...state,
+                cartProducts: action.cartProducts
             }
         default:
             return state;

@@ -10,6 +10,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import CategoryPage from "./components/CategoryPage";
 import ProductPage from "./components/ProductPage";
+import ShoppingCartPage from "./components/ShoppingCartPage";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route path="/products/:productId" exact={true}>
           <ProductPage />
+        </Route>
+        <Route path="/cart" exact={true}>
+          <ShoppingCartPage />
         </Route>
         <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
