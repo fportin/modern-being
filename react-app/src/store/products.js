@@ -1,6 +1,13 @@
 // constants
-// const SET_PRODUCT = "products/SET_PRODUCT";
+const SET_PRODUCT = "products/SET_PRODUCT";
 const SHOW_PRODUCTS = "products/SHOW_PRODUCTS";
+
+const setProduct = (product) => {
+    return {
+        type: SET_PRODUCT,
+        product
+    }
+}
 
 const showProducts = (allProducts) => {
     return {
@@ -10,8 +17,8 @@ const showProducts = (allProducts) => {
 }
 
 
-export const getProducts = () => async(dispatch) => {
-    const res = await fetch('/api/products');
+export const getProducts = (categoryId) => async(dispatch) => {
+    const res = await fetch(`/api/products/categories/${categoryId}`);
 
     if (res.ok) {
         const data = await res.json();
@@ -20,8 +27,18 @@ export const getProducts = () => async(dispatch) => {
     }
 }
 
+export const getProduct = (productId) => async (dispatch) => {
+    const res = await fetch(`/api/products/${productId}`)
 
-const initialState = { product: null };
+    if (res.ok) {
+        const data = await res.json()
+
+        dispatch(setProduct(data))
+    }
+}
+
+
+const initialState = { product: null, allProducts: null };
 
 const productReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -30,6 +47,11 @@ const productReducer = (state = initialState, action) => {
                 ...state,
                 allProducts: action.allProducts
             };
+        case SET_PRODUCT:
+            return {
+                ...state,
+                product: action.product
+            }
         default:
             return state;
     }

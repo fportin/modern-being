@@ -10,3 +10,10 @@ class Category(db.Model):
     products = db.relationship(
         "Product", secondary=product_category, back_populates="categories"
     )
+
+
+    def to_dict(self):
+        return {
+        "id": self.id,
+        "type": self.type
+        }

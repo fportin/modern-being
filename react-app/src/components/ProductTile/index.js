@@ -8,15 +8,15 @@ import './ProductTile.css';
 function ProductTile() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const allProducts = useSelector((state) => state.products.allProducts?.products);
+    const allProducts = useSelector((state) => state.products.allProducts);
     const sessionUser = useSelector((state) => state.session.user);
     // const allReviews = useSelector((state) => state.reviews.allReviews);
     // const [errors, setErrors] = useState([]);
 
 
-    useEffect(() => {
-        dispatch(productActions.getProducts())
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(productActions.getProducts())
+    // }, [dispatch]);
 
     const handleClick = productId => (e) => {
         e.preventDefault();
@@ -24,10 +24,10 @@ function ProductTile() {
     }
 
     if (allProducts) {
-
+        const availableProducts = allProducts.matchingProducts
         return (
             <>
-                {allProducts?.map(product => {
+                {availableProducts?.map(product => {
                     return (
                         <div key={product.id} className='product-tile__container' style={{ backgroundImage: `url(https:${product.photo})` }} onClick={handleClick(product.id)}>
                             {product.name}

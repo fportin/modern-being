@@ -8,6 +8,8 @@ import FrontPage from "./components/FrontPage";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import CategoryPage from "./components/CategoryPage";
+import ProductPage from "./components/ProductPage";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -39,15 +41,21 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
+        <Route path="/categories/:categoryId" exact={true}>
+          <CategoryPage />
+        </Route>
+        <Route path="/products/:productId" exact={true}>
+          <ProductPage />
+        </Route>
         <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/cart" exact={true} >
+        {/* <ProtectedRoute path="/cart" exact={true} >
           <h1>My Cart Page</h1>
-        </ProtectedRoute>
+        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );
