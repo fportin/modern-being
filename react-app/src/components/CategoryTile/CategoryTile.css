@@ -1,0 +1,6 @@
+.category-tile__container {
+    height: 300px;
+    width: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

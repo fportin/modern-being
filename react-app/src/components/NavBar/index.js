@@ -32,6 +32,10 @@ const NavBar = () => {
         <NavLink to="/" className="nav-banner__container">
           <img src={banner} alt="Modern-Being banner" />
         </NavLink>
+        <NavLink to='/categories/11' className='computing-nav' style={{ textDecoration: 'none' }}>Computing</NavLink>
+        <NavLink to='/categories/12' className='mobile-nav' style={{ textDecoration: 'none' }}>Mobile</NavLink>
+        <NavLink to='/categories/13' className='wearable-nav' style={{ textDecoration: 'none' }}>Wearables</NavLink>
+        <NavLink to='/categories/14' className='audio-nav' style={{ textDecoration: 'none' }}>Audio</NavLink>
         {sessionLinks}
         {/* <ul>
           <li>

@@ -2,12 +2,14 @@
     box-sizing: border-box;
     display: flex;
     height: fit-content;
+    min-height: 100vh;
+    width: 100vw;
     background-color: white;
     /* border: 1px solid red; */
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    padding: 3%;
+    /* padding: 3%; */
     gap: 3%;
 }
 
