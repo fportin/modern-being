@@ -27,8 +27,9 @@ function CategoryTile() {
             <>
                 {availableCategories?.map(category => {
                     if (category[0].id <= 10) {
+                        console.log(category[1].photo)
                         return (
-                            <div key={category[0].id} className='category-tile__container' style={{ backgroundImage: `url(https:${category[1].photo})` }} onClick={handleClick(category[0].id)}>
+                            <div key={category[0].id} className='category-tile__container' style={{ backgroundImage: `url(${category[1].photo})` }} onClick={handleClick(category[0].id)}>
                                 {category[0].type}
                             </div>
                         )
