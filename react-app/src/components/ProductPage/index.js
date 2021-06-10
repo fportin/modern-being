@@ -42,7 +42,7 @@ function ProductPage() {
                 <div className='product-page__container'>
                     <h1 className='product-name'>{currentProduct.name}</h1>
                     <h4 className='product-brand'>Brand: {currentProduct.brand}</h4>
-                    <img src={`https:${currentProduct.photo}`} alt='item' className='product-photo' />
+                    <img src={`${currentProduct.photo}`} alt='item' className='product-photo' />
                     <h4 className='product-price'>${formattedPrice}</h4>
                     <p className='product-description'>{currentProduct.description}</p>
                     <button type="submit" onClick={handleAdd(currentProduct.id)}>Add to Cart</button>

@@ -27,7 +27,7 @@ function CartProductTile() {
             <>
                 {addedProducts?.map(product => {
                     return (
-                        <div key={product.id} className='product-tile__container' style={{ backgroundImage: `url(https:${product.photo})` }} onClick={handleClick(product.id)}>
+                        <div key={product.id} className='product-tile__container' style={{ backgroundImage: `url(${product.photo})` }} onClick={handleClick(product.id)}>
                             {product.name}
                         </div>
                     )
