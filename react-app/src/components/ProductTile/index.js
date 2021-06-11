@@ -25,19 +25,25 @@ function ProductTile() {
 
     if (allProducts) {
         const availableProducts = allProducts.matchingProducts
-        return (
-            <>
-                {availableProducts?.map(product => {
-                    return (
-                        <div key={product.id} className='product-tile__container' style={{ backgroundImage: `url(${product.photo})` }} onClick={handleClick(product.id)}>
-                            {product.name}
-                        </div>
-                    )
-                })}
+        if (availableProducts.length === 0) {
+            return <h1>Sorry! There are no matches.</h1>
 
-            </>
+        } else if (availableProducts) {
 
-        )
+            return (
+                <>
+                    {availableProducts?.map(product => {
+                        return (
+                            <div key={product.id} className='product-tile__container' style={{ backgroundImage: `url(${product.photo})` }} onClick={handleClick(product.id)}>
+                                {product.name}
+                            </div>
+                        )
+                    })}
+    
+                </>
+    
+            )
+        }
 
     }
 

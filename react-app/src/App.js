@@ -11,7 +11,10 @@ import User from "./components/User";
 import CategoryPage from "./components/CategoryPage";
 import ProductPage from "./components/ProductPage";
 import ShoppingCartPage from "./components/ShoppingCartPage";
+import PurchasePage from "./components/PurchasePage";
+import SearchPage from "./components/SearchPage";
 import { authenticate } from "./store/session";
+
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -51,11 +54,14 @@ function App() {
         <Route path="/cart" exact={true}>
           <ShoppingCartPage />
         </Route>
+        <Route path="/search" exact={true}>
+          <SearchPage />
+        </Route>
+        <ProtectedRoute path="/users/:userId/order" exact={true} >
+          <PurchasePage />
+        </ProtectedRoute>
         <ProtectedRoute path="/users" exact={true} >
           <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true} >
-          <User />
         </ProtectedRoute>
         {/* <ProtectedRoute path="/cart" exact={true} >
           <h1>My Cart Page</h1>
