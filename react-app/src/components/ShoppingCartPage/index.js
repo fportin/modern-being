@@ -8,27 +8,54 @@ import "./ShoppingCartPage.css"
 
 function ShoppingCartPage() {
     const dispatch = useDispatch();
+    const history = useHistory()
     const cartProducts = useSelector((state) => state.products.cartProducts);
-    const [totalPrice, setTotalPrice] = useState(0);
+    const sessionUser = useSelector((state) => state.session.user);
+    const [cart, updateCart] = useState({})
+    const [emptyCart, setEmptyCart] = useState(false)
+
 
     useEffect(() => {
         const currentCart = JSON.parse(localStorage.getItem('cart'))
-        const productsArr = []
-        for (const productId in currentCart) {
-            productsArr.push(parseInt(productId))
+        if (!currentCart) {
+            return setEmptyCart(true)
         }
-        dispatch(productActions.getCartProducts(productsArr))
-    }, [dispatch])
+        setEmptyCart(false)
+        dispatch(productActions.getCartProducts(currentCart))
+    }, [dispatch, cart, emptyCart])
 
-    const items = JSON.parse(localStorage.getItem('cart'))
-    // console.log(items)
+    const handleEmpty = (e) => {
+        localStorage.removeItem('cart')
+        setEmptyCart(true)
+    }
 
-    return (
-        <div className="shopping-cart-page__container">
-            <h1>Cart</h1>
-            <CartProductTile />
-        </div>
-    )
+    const handleCheckout = cart => (e) => {
+        if (sessionUser) {
+            localStorage.removeItem('cart')
+            setEmptyCart(true)
+            history.push(`/users/${sessionUser.id}/order`)
+        } else {
+            history.push('/login')
+        }
+    }
+
+
+    if (cartProducts && !emptyCart) {
+        const formattedTotal = cartProducts.total.toFixed(2)
+        
+        
+        return (
+            <div className="shopping-cart-page__container">
+                <h1>Cart</h1>
+                <CartProductTile change={updateCart} />
+                <h1>Total: ${formattedTotal}</h1>
+                <button type="submit" onClick={handleEmpty}>Empty Cart</button>
+                <button type="submit" onClick={handleCheckout(cartProducts)}>Checkout</button>
+            </div>
+        )
+    }
+
+    return (<h1>Your cart is empty</h1>)
 }
 
 export default ShoppingCartPage;

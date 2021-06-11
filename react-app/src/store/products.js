@@ -45,6 +45,26 @@ export const getProduct = (productId) => async (dispatch) => {
     }
 }
 
+export const searchProducts = (searchTerm) => async (dispatch) => {
+    const res = await fetch(`api/products/search`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            searchTerm,
+        }),
+    });
+
+    if (res.ok) {
+        const data = await res.json();
+
+        dispatch(showProducts(data))
+    }
+
+    return res;
+};
+
 export const getCartProducts = (productsArr) => async (dispatch) => {
     const res = await fetch(`api/products/cart`, {
         method: "POST",
@@ -55,7 +75,7 @@ export const getCartProducts = (productsArr) => async (dispatch) => {
             productsArr,
         }),
     });
-
+    
     if (res.ok) {
         const data = await res.json();
         dispatch(showCartProducts(data));

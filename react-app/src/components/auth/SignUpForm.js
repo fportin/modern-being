@@ -21,6 +21,8 @@ const SignUpForm = () => {
       if (data.errors) {
         setErrors(data.errors);
       }
+    } else {
+      setErrors(["Password and Confirm Password should match."])
     }
   };
 

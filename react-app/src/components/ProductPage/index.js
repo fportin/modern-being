@@ -25,7 +25,11 @@ function ProductPage() {
         if (currentCart) {
             data = JSON.parse(currentCart)
             if (data[`${productId}`]) {
-                data[`${productId}`] += 1
+                if (data[`${productId}`] < 10) {
+                    data[`${productId}`] += 1
+                } else {
+                    alert("Order limit per item is 10.")
+                }
             } else {
                 data[`${productId}`] = quantity
             }
