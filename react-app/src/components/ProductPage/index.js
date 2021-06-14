@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 
 import * as productActions from "../../store/products";
+import ReviewTile from "../ReviewTile"
 import './ProductPage.css';
 
 function ProductPage() {
@@ -37,6 +38,7 @@ function ProductPage() {
         } else {
             localStorage.setItem('cart', JSON.stringify(data))
         }
+        history.push('/cart')
     }
 
     if (currentProduct) {
@@ -44,13 +46,16 @@ function ProductPage() {
         return (
             <div className='product-page'>
                 <div className='product-page__container'>
-                    <h1 className='product-name'>{currentProduct.name}</h1>
-                    <h4 className='product-brand'>Brand: {currentProduct.brand}</h4>
                     <img src={`${currentProduct.photo}`} alt='item' className='product-photo' />
-                    <h4 className='product-price'>${formattedPrice}</h4>
-                    <p className='product-description'>{currentProduct.description}</p>
-                    <button type="submit" onClick={handleAdd(currentProduct.id)}>Add to Cart</button>
+                    <div className="product-details__container">
+                        <h1 className='product-name'>{currentProduct.name}</h1>
+                        <h4 className='product-brand'>Brand: {currentProduct.brand}</h4>
+                        <h4 className='product-price'>${formattedPrice}</h4>
+                        <p className='product-description'>{currentProduct.description}</p>
+                        <button type="submit" onClick={handleAdd(currentProduct.id)}>Add to Cart</button>
+                    </div>
                 </div>
+                <ReviewTile />
             </div>
         );
     }

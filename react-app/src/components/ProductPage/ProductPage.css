@@ -1,7 +1,23 @@
 .product-page {
     background-color: white;
+    min-height: 100vh;
+    height: auto;
+    width: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-page__container {
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
 }
 
 .product-photo {
-    height: 500px;
+    height: 300px;
+}
+
+.product-details__container {
+    margin-left: 50px;
 }

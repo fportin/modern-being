@@ -1,0 +1,32 @@
+.cart-product-tile__container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 300px;
+    width: auto;
+    margin: 30px 15px;
+    padding: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: white;
+    /* border: 1px solid red; */
+}
+
+.cart-product-photo {
+    height: 250px;
+    width: 250px;
+}
+
+.cart-product-tile-text {
+    margin-left: 30px;
+}
+
+.cart-product-tile-name {
+    font-size: 30px;
+}
+
+.cart-product-tile-price {
+    font-size: 20px;
+}

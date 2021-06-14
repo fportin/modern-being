@@ -1,4 +1,40 @@
 .search-icon {
     height: 30px;
     width: 30px;
+    animation: fadeInEffect ease-in 0.2s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    filter: invert(50%);
+}
+
+.search-bar {
+    width: 500px;
+    height: 40px;
+    opacity: 0;
+    outline: none;
+    font-size: 17px;
+    border: none;
+    padding: 14px 16px 0 10px;
+    background-color: whitesmoke;
+}
+
+.search-bar:focus, 
+.search-bar:not(:placeholder-shown) {
+    border-bottom: 1px solid #f5be39ff;
+    opacity: 1;
+    transition: all ease-in 0.25s;
+}
+
+
+@keyframes fadeInEffect {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -17,6 +17,7 @@ function FrontPage() {
         <div className="front-page__container">
             <div className="front-logo__container" style={{ backgroundImage: `url(${logo})` }}>
             </div>
+            <div className="front-page-text">Shop our Latest Tech</div>
             <CategoryTile />
         </div>
     )

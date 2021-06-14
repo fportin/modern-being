@@ -46,7 +46,7 @@ export const getProduct = (productId) => async (dispatch) => {
 }
 
 export const searchProducts = (searchTerm) => async (dispatch) => {
-    const res = await fetch(`api/products/search`, {
+    const res = await fetch("/api/products/search", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export const searchProducts = (searchTerm) => async (dispatch) => {
 };
 
 export const getCartProducts = (productsArr) => async (dispatch) => {
-    const res = await fetch(`api/products/cart`, {
+    const res = await fetch(`/api/products/cart`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

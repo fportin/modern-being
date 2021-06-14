@@ -1,3 +1,10 @@
 .category-page__container {
+    box-sizing: border-box;
+    display: flex;
+    height: fit-content;
+    min-height: 100vh;
+    width: auto;
     background-color: white;
+    flex-wrap: wrap;
+    justify-content: center;
 }

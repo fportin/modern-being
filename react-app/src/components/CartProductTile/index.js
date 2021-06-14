@@ -51,19 +51,21 @@ function CartProductTile({change}) {
             <>
                 {addedProducts?.map(product => {
                     return (
-                        <div key={product.id} className='product-tile__container' >
+                        <div key={product.id} className='cart-product-tile__container' >
                             <img src={`${product.photo}`} alt='item' className='cart-product-photo' onClick={handleClick(product.id)} />
-                            <div onClick={handleClick(product.id)}>${product.name}</div>
-                            <div>${product.price}</div>
-                            <h1>${product.subtotal}</h1>
-                            <input 
-                                type="number" 
-                                value={target === product.id ? quantity : product.quantity} 
-                                onChange={handleQuantity(product.id)} 
-                                min="1" 
-                                max="10" 
-                            />
-                            <button type="submit" onClick={handleRemove(product.id)}>Remove Item</button>
+                            <div className="cart-product-tile-text">
+                                <div className="cart-product-tile-name" onClick={handleClick(product.id)}>{product.name}</div>
+                                <div className="cart-product-tile-price">${product.price.toFixed(2)}</div>
+                                <h1 className="cart-product-tile-subtotal">Subtotal: ${product.subtotal.toFixed(2)}</h1>
+                                <input 
+                                    type="number" 
+                                    value={target === product.id ? quantity : product.quantity} 
+                                    onChange={handleQuantity(product.id)} 
+                                    min="1" 
+                                    max="10" 
+                                />
+                                <button type="submit" onClick={handleRemove(product.id)}>Remove Item</button>
+                            </div>
                         </div>
                     )
                 })}
