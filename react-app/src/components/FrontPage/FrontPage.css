@@ -3,12 +3,12 @@
     display: flex;
     height: fit-content;
     min-height: 100vh;
-    width: 100vw;
+    width: auto;
     background-color: white;
     /* border: 1px solid red; */
     flex-wrap: wrap;
     justify-content: center;
-    align-content: flex-start;
+    /* align-content: flex-start; */
     /* padding: 3%; */
     gap: 3%;
 }
@@ -24,4 +24,11 @@
     /* margin-top: 25px; */
     background-color: black;
     /* border: 1px solid green; */
+}
+
+.front-page-text {
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }

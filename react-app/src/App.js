@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import FrontPage from "./components/FrontPage";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
-import User from "./components/User";
+// import User from "./components/User";
 import CategoryPage from "./components/CategoryPage";
 import ProductPage from "./components/ProductPage";
 import ShoppingCartPage from "./components/ShoppingCartPage";
@@ -67,6 +68,7 @@ function App() {
           <h1>My Cart Page</h1>
         </ProtectedRoute> */}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -33,7 +33,7 @@ const NavBar = () => {
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login" exact={true} activeClassName="active">
+        <NavLink to="/login" exact={true} className='login-nav'>
           Login
         </NavLink>
       </>

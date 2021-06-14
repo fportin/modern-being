@@ -1,26 +1,13 @@
 .product-tile__container {
     box-sizing: border-box;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 333px;
-    width: 500px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    font-size: 10px;
-    color: white;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin-bottom: 1%;
-    border: 1px hidden;
-    border-width: 2px 4px;
+    align-items: center;
+    justify-content: flex-start;
+    height: 300px;
+    width: 600px;
+    margin: 30px 15px;
     border-radius: 5px;
     overflow: hidden;
-    padding-right: 3%;
-    padding-bottom: 1%;
-    transition: background-size 2s ease-in;
-    background-position: center;
     cursor: pointer;
     background-color: white;
 }
@@ -29,4 +16,24 @@
     box-shadow: 0 10px 10px 5px #062743;
     /* background-size: 700px 483px; */
     background-position: center;
+}
+
+.product-tile-photo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    width: 300px;
+    /* border: 1px solid blue; */
+}
+
+.product-tile-text {
+    margin-left: 30px;
+}
+
+.product-tile-name {
+    font-size: 18px;
+    color: white;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
 }

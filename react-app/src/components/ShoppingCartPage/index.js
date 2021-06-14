@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useParams, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as productActions from "../../store/products"
@@ -49,8 +49,8 @@ function ShoppingCartPage() {
                 <h1>Cart</h1>
                 <CartProductTile change={updateCart} />
                 <h1>Total: ${formattedTotal}</h1>
-                <button type="submit" onClick={handleEmpty}>Empty Cart</button>
-                <button type="submit" onClick={handleCheckout(cartProducts)}>Checkout</button>
+                <button className="shopping-cart-page-btn" type="submit" onClick={handleEmpty}>Empty Cart</button>
+                <button className="shopping-cart-page-btn" type="submit" onClick={handleCheckout(cartProducts)}>Checkout</button>
             </div>
         )
     }

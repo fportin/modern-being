@@ -35,7 +35,6 @@ def get_cart_products():
 def search_products():
     data = request.json
     term = data['searchTerm']
-    print(term)
     products = db.session.query(Product).join(Product.categories).filter(Category.type.ilike(f'%{term}%') | Product.brand.ilike(f'%{term}%') | Product.name.ilike(f'%{term}%')).all()
     if not products:
         products = db.session.query(Product).filter(Product.description.ilike(f'%{term}%')).all()

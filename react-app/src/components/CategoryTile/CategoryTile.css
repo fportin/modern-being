@@ -1,6 +1,37 @@
 .category-tile__container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 300px;
     width: 300px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.category-tile-photo {
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+    height: 250px;
+    transition: all ease-in .25s;
+    z-index: 1;
+}
+
+.category-tile-type {
+    font-size: 20px;
+    text-align: center;
+    transition: all ease-in .25s;
+    z-index: 2;
+}
+
+.category-tile__container:hover > .category-tile-photo {
+    /* box-shadow: 0 10px 10px 5px #062743; */
+    transform: scale(1.2);
+}
+
+.category-tile__container:hover > .category-tile-type {
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: white;
 }

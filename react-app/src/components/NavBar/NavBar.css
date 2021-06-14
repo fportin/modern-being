@@ -1,22 +1,60 @@
 .navbar__container {
     box-sizing: border-box;
     height: 75px;
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 0px 350px;
     background-color: whitesmoke;
-    /* border: 1px solid red; */
 }
 
 .nav-banner__container {
     box-sizing: border-box;
     display: flex;
     height: 25px;
-    width: 300px;
-    justify-content: center;
-    align-self: center;
-    /* border: 1px solid green; */
+    width: 160px;
+    position: absolute;
+    left: 100px;
+}
 
+.nav-banner__container:hover {
+    filter: invert(50%);
+}
+
+.computing-nav,
+.mobile-nav,
+.wearable-nav,
+.audio-nav {
+    color: black;
+    text-decoration: none;
+}
+
+.cart-nav {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 200px;
+}
+
+.login-nav,
+.logout-btn {
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    right: 100px;
+    cursor: pointer;
+
+}
+
+.computing-nav:hover,
+.mobile-nav:hover,
+.wearable-nav:hover,
+.audio-nav:hover,
+.cart-nav:hover,
+.login-nav:hover,
+.logout-btn:hover {
+    color: #f5be39ff;
 }
 
 .subbar__container {
