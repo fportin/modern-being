@@ -37,19 +37,19 @@ Modern-Being is an consumer electronics e-commerce site.
 * Users could only view their own shopping cart.
 * Users could checkout the products in their shopping cart.
 
-#Reviews:
+# Reviews:
 * Star rating is implemented as well as product review text.
 * Logged-in user can review a Product listing.
 * Logged-in user can delete or edit his review.
 
-#Search: 
+# Search: 
 * Accurate search queries and filtered well.
 
 
 # Modern Being live site:
 * https://modernbeing.herokuapp.com/
 
-#Developer:
+# Developer:
 * Franco Portin (solo)
 
 # Future Plans:
