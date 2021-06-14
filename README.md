@@ -2,6 +2,15 @@
 
 Modern-Being is an consumer electronics e-commerce site.
 
+# Screenshots:
+
+<img width="1920" alt="Screen Shot 2021-06-14 at 7 33 22 AM" src="https://user-images.githubusercontent.com/73340706/121914431-1c586980-cce7-11eb-8547-50fcfd11791c.png">
+
+<img width="1920" alt="Screen Shot 2021-06-14 at 7 33 39 AM" src="https://user-images.githubusercontent.com/73340706/121914699-5cb7e780-cce7-11eb-9155-576e145b8280.png">
+
+<img width="1920" alt="Screen Shot 2021-06-14 at 7 35 05 AM" src="https://user-images.githubusercontent.com/73340706/121914823-7a854c80-cce7-11eb-84a2-d4295594fb35.png">
+
+
 # Technologies:
 * Python
 * Flask
