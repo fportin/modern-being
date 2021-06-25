@@ -56,7 +56,7 @@ const NavBar = () => {
         : null
         }
         <SearchBar search={setSearchBarActive}/>
-        <NavLink to='/cart' className='cart-nav' style={{ textDecoration: 'none' }}>Cart</NavLink>
+        <NavLink to='/cart' className='cart-nav' style={{ textDecoration: 'none' }}>Cart({cartProducts ? cartProducts.qty : null})</NavLink>
         {sessionLinks}
         {/* <ul>
           <li>
