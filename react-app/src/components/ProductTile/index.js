@@ -39,7 +39,7 @@ function ProductTile() {
         } else {
             localStorage.setItem('cart', JSON.stringify(data))
         }
-        // history.push('/cart')
+        history.push('/cart')
     }
 
     const handleClick = productId => (e) => {

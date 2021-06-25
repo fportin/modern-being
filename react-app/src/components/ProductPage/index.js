@@ -38,7 +38,7 @@ function ProductPage() {
         } else {
             localStorage.setItem('cart', JSON.stringify(data))
         }
-        // history.push('/cart')
+        history.push('/cart')
     }
 
     if (currentProduct) {

@@ -32,9 +32,9 @@ def create_review():
 
 @review_routes.route('/<int:productId>')
 def get_reviews(productId):
-    reviews = db.session.query(Review, User).filter(Review.productId == productId).order_by(Review.id.desc()).all()
+    reviews = db.session.query(Review, User).join(User).filter(Review.productId == productId).order_by(Review.id.desc()).all()
+    print(reviews)
     review_list = { "matchingReviews": [(review.to_dict(), user.to_dict()) for review, user in reviews]}
-    print(review_list)
     return review_list
 
 @review_routes.route('/<int:productId>/edit', methods=['PUT'])
