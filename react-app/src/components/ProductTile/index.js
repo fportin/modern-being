@@ -25,6 +25,7 @@ function ProductTile() {
         let data = { [productId]: quantity }
         if (currentCart) {
             data = JSON.parse(currentCart)
+            // dispatch(productActions.getCartProducts(data))
             if (data[`${productId}`]) {
                 if (data[`${productId}`] < 10) {
                     data[`${productId}`] += 1
