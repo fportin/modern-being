@@ -66,6 +66,10 @@ export const searchProducts = (searchTerm) => async (dispatch) => {
 };
 
 export const getCartProducts = (productsArr) => async (dispatch) => {
+    if (!productsArr) {
+        dispatch(showCartProducts(null));
+        return null;
+    }
     const res = await fetch(`/api/products/cart`, {
         method: "POST",
         headers: {

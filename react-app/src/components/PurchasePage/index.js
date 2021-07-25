@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './PurchasePage.css'
 
 
 const PurchasePage = () => {
-    // const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory();
 
@@ -20,7 +19,7 @@ const PurchasePage = () => {
     }, [sessionUser, history])
     if (sessionUser) return (
         <>
-            <h1 className='purchase-page'>Thank you for your purchase, {sessionUser.username}! We will be processing your order shortly.</h1>
+            <h1 className='purchase-page'>Thank you for your purchase, <span className='purchase-page-user-name'>{sessionUser.username}</span>! We will be processing your order shortly.</h1>
         </>
     )
 

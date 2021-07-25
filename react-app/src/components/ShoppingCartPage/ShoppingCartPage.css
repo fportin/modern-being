@@ -1,16 +1,65 @@
 .shopping-cart-page__container {
     background-color: white;
-    min-height: 100vh;
+    min-height: calc(100vh - 190px);
     height: auto;
-    width: auto;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    padding: 1.5% 5%;
+    padding-bottom: 2%;
+}
+
+.shopping-cart-page-title {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart-page-empty-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: royalblue;
+    width: fit-content;
+    padding: 0;
+    margin-right: 9.5%;
+    cursor: pointer;
+}
+
+.shopping-cart-page-empty-btn:hover {
+    color: #ff000d;
+}
+
+.shopping-cart-page-total {
+    /* border: 1px solid red; */
+    align-self: flex-end;
+    margin-right: 9.5%;
+    margin-top: 1%;
+    font-size: 25px;
 }
 
 .shopping-cart-page-btn {
-    width: 500px;
+    width: 200px;
     height: 50px;
+    border: 1px solid gainsboro;
+    background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
     border-radius: 5px;
-    margin: 10px;
+    cursor: pointer;
+    margin: 1% 9%;
+    align-self: flex-end;
+}
+
+.shopping-cart-page-btn:hover {
+    border: 1px solid gray;
+    filter: contrast(125%);
+}
+
+.shopping-cart-page-btn:active {
+    color: white;
 }

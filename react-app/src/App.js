@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -15,19 +15,21 @@ import ShoppingCartPage from "./components/ShoppingCartPage";
 import PurchasePage from "./components/PurchasePage";
 import SearchPage from "./components/SearchPage";
 import { authenticate } from "./store/session";
+import * as productActions from "./store/products";
 
 
 function App() {
-  const user = useSelector(state => state.session.user)
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      const Cart = JSON.parse(localStorage.getItem('cart'))
+      dispatch(productActions.getCartProducts(Cart))
       setLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!loaded) {
     return null;

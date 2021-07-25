@@ -4,11 +4,11 @@ html, body {
     margin: 0;
     padding: 0;
     height: auto;
-    width: auto;
-    /* overflow: hidden; */
-    /* color: white; */
+    width: 100%;
+    min-height: 100vh;
     color: black;
-    font-family: 'MuseoModerno', cursive;
+    /* font-family: 'MuseoModerno', cursive; */
+    font-family: 'Encode Sans', sans-serif;
 }
 
 * {

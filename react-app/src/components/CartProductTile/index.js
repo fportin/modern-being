@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import './CartProductTile.css';
 
 function CartProductTile({change}) {
     const history = useHistory();
     const cartProducts = useSelector((state) => state.products.cartProducts);
-    const sessionUser = useSelector((state) => state.session.user);
     const [quantity, setQuantity] = useState()
     const [target, setTarget] = useState(null);
-    // const allReviews = useSelector((state) => state.reviews.allReviews);
-    // const [errors, setErrors] = useState([]);
-    
 
     const handleClick = productId => (e) => {
         e.preventDefault();
@@ -52,19 +48,27 @@ function CartProductTile({change}) {
                 {addedProducts?.map(product => {
                     return (
                         <div key={product.id} className='cart-product-tile__container' >
-                            <img src={`${product.photo}`} alt='item' className='cart-product-photo' onClick={handleClick(product.id)} />
+                            <div className='cart-product-photo' style={{ backgroundImage: `url(${product.photo})` }} onClick={handleClick(product.id)}></div>
                             <div className="cart-product-tile-text">
                                 <div className="cart-product-tile-name" onClick={handleClick(product.id)}>{product.name}</div>
                                 <div className="cart-product-tile-price">${product.price.toFixed(2)}</div>
-                                <h1 className="cart-product-tile-subtotal">Subtotal: ${product.subtotal.toFixed(2)}</h1>
-                                <input 
-                                    type="number" 
-                                    value={target === product.id ? quantity : product.quantity} 
-                                    onChange={handleQuantity(product.id)} 
-                                    min="1" 
-                                    max="10" 
-                                />
-                                <button type="submit" onClick={handleRemove(product.id)}>Remove Item</button>
+                                <label key={product.id} className="cart-product-tile-quantity-select">
+                                    Quantity: 
+                                        <select value={target === product.id ? quantity : product.quantity} onChange={handleQuantity(product.id)}>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </label>
+                                <div className="cart-product-tile-subtotal">Item Subtotal: ${product.subtotal.toFixed(2)}</div>
+                                <button type="button" className="cart-product-tile-remove-btn" onClick={handleRemove(product.id)}>Remove</button>
                             </div>
                         </div>
                     )

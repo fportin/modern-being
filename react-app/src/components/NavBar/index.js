@@ -1,27 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
+import React, {useState} from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useSelector } from "react-redux";
 import LogoutButton from '../auth/LogoutButton';
 import SearchBar from "../SearchBar"
 
 import banner from "../../images/modern-being-name-black.png"
+import cartIcon from "../../images/cart-icon.png"
 import "./NavBar.css";
 
 const NavBar = () => {
-  const dispatch = useDispatch();
+  const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user)
   const cartProducts = useSelector((state) => state.products.cartProducts);
   const [searchBarActive, setSearchBarActive] = useState(false);
-  // const [itemQty, setItemQty] = useState(0)
 
-  // useEffect(() => {
-    
-  //   if (!currentCart) {
-  //     return
-  //   }
-    
-  //   setItemQty(cartProducts?.qty)
-  // }, [dispatch, itemQty])
+  const handleHome = (e) => {
+    e.preventDefault();
+    setSearchBarActive(false)
+    history.push(`/`)
+  }
 
   let sessionLinks;
   if (sessionUser) {
@@ -43,7 +40,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar__container">
-        <NavLink to="/" className="nav-banner__container">
+        <NavLink exact to="/" onClick={handleHome} className="nav-banner__container">
           <img src={banner} alt="Modern-Being banner" />
         </NavLink>
         {!searchBarActive ? 
@@ -55,8 +52,8 @@ const NavBar = () => {
         </> 
         : null
         }
-        <SearchBar search={setSearchBarActive}/>
-        <NavLink to='/cart' className='cart-nav' style={{ textDecoration: 'none' }}>Cart</NavLink>
+        <SearchBar search={setSearchBarActive} searchOn={searchBarActive}/>
+        <NavLink to='/cart' className='cart-nav' style={{ textDecoration: 'none' }}><img src={cartIcon} alt="Cart Icon" /> {cartProducts ? <div className="cart-qty-nav">{cartProducts.qty}</div> : null}</NavLink>
         {sessionLinks}
         {/* <ul>
           <li>

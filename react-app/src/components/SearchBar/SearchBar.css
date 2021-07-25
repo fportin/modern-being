@@ -20,13 +20,16 @@
     border: none;
     padding: 14px 16px 0 10px;
     background-color: whitesmoke;
+    transform-origin: bottom right;
+    border-bottom: 1px solid #f5be39ff;
+    transform: scaleX(0);
+    transition: all ease-in-out 0.3s;
 }
 
 .search-bar:focus, 
 .search-bar:not(:placeholder-shown) {
-    border-bottom: 1px solid #f5be39ff;
     opacity: 1;
-    transition: all ease-in 0.25s;
+    transform: scaleX(1);
 }
 
 

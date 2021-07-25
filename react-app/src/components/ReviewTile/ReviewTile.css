@@ -1,18 +1,142 @@
 .reviews__container {
-    margin-left: 50px;
+    /* margin-left: 50px; */
+    /* border: 1px solid red; */
+    width: 100%;
 }
 
 .review-title {
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 1%;
 }
 
-.review-box input[type="radio"] {
+/* .review-box {
+    border: 1px solid blue;
+} */
+
+.review-box-user {
+    margin-top: 2%;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0.25%;
+
+}
+
+.review-box-body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    justify-content: flex-start;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.review-box-edit-btn {
+    margin-top: 1%;
+    width: 75px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: inherit;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+.review-box-edit-btn:hover {
+    background-color: whitesmoke;
+}
+
+.review-box-edit-btn:active {
+    background-color: rgba(245, 190, 57, 0.5);
+    border-color: #f5be39ff;
+}
+
+.edit-review__container input[type="radio"] {
     opacity: 0;
     width: 0;
     position: absolute;
-    
 }
 
-.review-edit-box {
-    font-size: 20px;
+.edit-review__container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.edit-review-form-errors {
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    left: 250px;
+    top: -15px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-review-stars__container {
+    margin-left: 1.5%;
+}
+
+.edit-review-box {
+    font-size: 16px;
+    margin-top: 1%;
+    padding: 5px 16px 5px 10px;
+    color: black;
+    border: 1px solid gainsboro;
+    overflow: auto;
+    resize: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20vh;
+    transition: background-color ease-in 0.25s;
+}
+
+.edit-review-box:hover {
+    background-color: whitesmoke;
+}
+
+.edit-review-box:focus {
+    background-color: white;
+}
+
+.edit-review-btn__container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 1%;
+    gap: 3%;
+    /* border: 1px solid blue; */
+}
+
+.review-form-btn {
+    width: 150px;
+    height: 30px;
+    border: 1px solid gainsboro;
+    background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form-btn:hover {
+    border: 1px solid gray;
+    filter: contrast(125%);
+}
+
+.review-form-btn:active {
+    color: white;
+}
+
+.delete {
+    color: #ff000d;
+    text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.delete:hover {
+    border: 1px solid #ff000d;
 }

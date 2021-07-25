@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux";
 
 import * as categoryActions from "../../store/category"
 import CategoryTile from "../CategoryTile"

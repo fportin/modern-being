@@ -17,7 +17,6 @@ def create_review():
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
-    current = current_user.to_dict()
     if current_user.is_authenticated and form.validate_on_submit() and (current_user.id == form.data['userId']):
         review = Review(
             rating = form.data['rating'],
@@ -44,8 +43,7 @@ def edit_review(productId):
     review = db.session.query(Review).get(target)
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    current = current_user.to_dict()
-    if current_user.is_authenticated and form.validate_on_submit() and (current_user.id == form.data['userId']) and (productId == form.data['productId']):
+    if current_user.is_authenticated and form.validate_on_submit() and (current_user.id == form.data['userId']) and (productId == form.data['productId']) and (review.userId == current_user.id):
         review.rating = form.data['rating']
         review.body = form.data['body']
         db.session.commit()
@@ -57,11 +55,10 @@ def edit_review(productId):
 def delete_review(productId):
     target = request.json['target']
     userId = request.json['userId']
-    productId = request.json['productId']
+    prodId = request.json['productId']
     review = db.session.query(Review).get(target)
-    current = current_user.to_dict()
-    if current_user.is_authenticated and (current_user.id == userId) and (productId == productId):
+    if current_user.is_authenticated and (current_user.id == userId) and (productId == prodId) and (review.userId == current_user.id):
         db.session.delete(review)
         db.session.commit()
         return { "message": 'The Review has been deleted.' }   
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401    
+    return {'errors': 'There was an error in validating the delete request.'}, 401    

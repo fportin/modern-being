@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import * as productActions from "../../store/products"
 import searchIcon from "../../images/magnifying-glass.png"
 import "./SearchBar.css"
 
-function Searchbar({ search }) {
+function Searchbar({ search, searchOn }) {
     const location = useLocation();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -14,24 +14,37 @@ function Searchbar({ search }) {
     const [searchActive, setSearchActive] = useState(false);
     // console.log("LOCATION", location.pathname)
     useEffect(() => {
+        if (!searchOn) {
+            setSearchActive(false)
+            setSearchTerm("")
+            if (location.pathname === '/search') {
+                history.push("/");
+            }
+        }
+
         if (searchActive) {
             if (searchTerm) {
                 dispatch(productActions.searchProducts(searchTerm));
-                history.push("/search");
+                history.push({
+                    pathname: "/search",
+                    state: {
+                        searchTerm: searchTerm,
+                    },
+                });
             } else if (!searchTerm && location.pathname === '/search') {
                 history.push("/");
             }
-        } else {
-            history.push("/")
         }
 
-    }, [searchTerm, dispatch]);
+    }, [searchTerm, dispatch, searchOn]);
 
     const handleClickOut = (e) => {
         e.preventDefault()
         if (!searchTerm) {
-            setSearchActive(false)
-            search(false)
+            setTimeout(() => {
+                setSearchActive(false)
+                search(false)
+            }, 250)
         }
     }
 
@@ -48,7 +61,7 @@ function Searchbar({ search }) {
                     onBlur={handleClickOut}
                     autoFocus
                 /> :
-                <img className="search-icon" src={searchIcon} onClick={(e) => {
+                <img className="search-icon" src={searchIcon} alt='Search Icon' onClick={(e) => {
                     setSearchActive(true)
                     search(true)
                 }} />

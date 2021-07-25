@@ -1,23 +1,86 @@
 .product-page {
     background-color: white;
-    min-height: 100vh;
+    min-height: calc(100vh - 190px);
     height: auto;
     width: auto;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
 }
 
 .product-page__container {
-    padding: 50px;
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
     display: flex;
+    justify-content: flex-start;
 }
 
 .product-photo {
-    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    width: 49%;
+    align-self: center;
 }
 
 .product-details__container {
-    margin-left: 50px;
+    margin-left: 5%;
+    width: 50%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.product-brand {
+    font-size: 16px;
+}
+
+.product-brand-name {
+    color: royalblue;
+}
+
+/* .product-price {
+    font-size: 18px;
+    color: red;
+    font-weight: 700;
+} */
+
+.product-page-add-btn {
+    margin-top: 5%;
+    width: 150px;
+    height: 40px;
+    border: 1px solid gainsboro;
+    background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
+    font-size: 18px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-page-add-btn:hover {
+    border: 1px solid gray;
+    filter: contrast(125%);
+}
+
+.product-page-add-btn:active {
+    color: white;
+}
+
+.product-page-reviews__container {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }

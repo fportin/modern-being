@@ -49,6 +49,14 @@ function ReviewForm({ edit, updater }) {
         return setErrors(['There was an error posting the Product Review.']);
     };
 
+    const handleCancel = (e) => {
+        e.preventDefault()
+        setReviewActive(false)
+        setStarRating(0)
+        setReviewBody('')
+        setErrors([])
+    }
+
     if (currentProduct) {
         if (sessionUser && reviewActive && !edit) {
             const stars = []
@@ -66,6 +74,7 @@ function ReviewForm({ edit, updater }) {
                         <img 
                             className="star-icon" 
                             id={`${starVal}-star`}
+                            alt="Star Icon"
                             src={(starVal <= starRating) ? shaded : unshaded}
                         />
                     </label>
@@ -74,8 +83,8 @@ function ReviewForm({ edit, updater }) {
             
             return (
                 <>
-                    <form onSubmit={handleSubmit}>
-                        <ul>
+                    <form className="review-form" onSubmit={handleSubmit}>
+                        <ul className='review-form-errors'>
                             {errors.map((error, idx) => <div key={idx}>{error}</div>)}
                         </ul>
                         <label htmlFor="review" className='review-form-label'></label>
@@ -95,7 +104,12 @@ function ReviewForm({ edit, updater }) {
                                 className="review-input-box"
                             />
                         </div>
-                        {sessionUser ? <button type="submit">Post</button> : null}                    
+                        {sessionUser ? 
+                            <div className='edit-review-btn__container'>
+                                <button className='review-form-btn' type="submit">Submit</button>
+                                <button className='review-form-btn' type="reset" onClick={handleCancel}>Cancel</button>
+                            </div>
+                            : null}                    
                     </form>
                 </>
             );
@@ -110,7 +124,7 @@ function ReviewForm({ edit, updater }) {
 
     }
 
-    return (<h1>Write a Review</h1>)
+    return (<></>)
 }
 
 

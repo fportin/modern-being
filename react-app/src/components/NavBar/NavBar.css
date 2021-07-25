@@ -34,7 +34,16 @@
     color: black;
     text-decoration: none;
     position: absolute;
-    right: 200px;
+    right: 250px;
+    box-sizing: border-box;
+    display: flex;
+    height: 35px;
+    width: auto;
+
+}
+
+.cart-nav:hover > img{
+    filter: invert(50%);
 }
 
 .login-nav,
@@ -51,7 +60,6 @@
 .mobile-nav:hover,
 .wearable-nav:hover,
 .audio-nav:hover,
-.cart-nav:hover,
 .login-nav:hover,
 .logout-btn:hover {
     color: #f5be39ff;
@@ -61,4 +69,23 @@
     background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
     height: 15px;
     width: auto;
+}
+
+.cart-qty-nav {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f5be39ff;
+    color: black;
+    text-align: center;
+    font-size: 75%;
+    position: absolute;
+    right: -20%;
+    top: -20%;
+    padding-top: 2.5px;
+}
+
+.cart-nav:hover > .cart-qty-nav {
+    color: white;
+    background-color: black;
 }

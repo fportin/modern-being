@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 import * as reviewActions from "../../store/review"
 import ReviewForm from "../ReviewForm"
@@ -10,7 +9,6 @@ import "./ReviewTile.css"
 
 function ReviewTile() {
     const dispatch = useDispatch();
-    const history = useHistory();
     const currentProduct = useSelector((state) => state.products.product)
     const sessionUser = useSelector((state) => state.session.user);
     const allReviews = useSelector((state) => state.reviews.allReviews);
@@ -49,6 +47,12 @@ function ReviewTile() {
         return setErrors(['Errors in editing your review for the Product.']);
     };
 
+    const handleCancel = (e) => {
+        e.preventDefault();
+        setEditReview(false)
+        setErrors([])
+    }
+
     const handleDelete = async (e) => {
         e.preventDefault();
         if (sessionUser) {
@@ -81,6 +85,7 @@ function ReviewTile() {
                         className="star-icon"
                         id={`${starVal}`}
                         src={(starVal <= starRating) ? shaded : unshaded}
+                        alt="Star Icon"
                     />
                 </label>
             )
@@ -89,54 +94,58 @@ function ReviewTile() {
         const availableReviews = allReviews.matchingReviews
         return (
             <div className="reviews__container">
-                <h4 className='review-title'>Reviews:</h4>
+                <div className='review-title'>Reviews:</div>
                 <ReviewForm edit={editReview} updater={setPageRefresh} />
                 {availableReviews.map((review, idx) => {
                     if (!editReview) {
                         return (
                             <div key={`review-${review[0].id}`} className='review-box'>
-                                <h3>{review[1].username}</h3>
+                                <div className="review-box-user">{review[1].username}</div>
                                 {[...Array(5)].map((star, idx2) => {
                                     return (<img
                                         key={`${idx2}-rating`}
                                         className="star-icon"
                                         id={`${idx2}-star`}
+                                        alt="Star Icon"
                                         src={(review[0].rating >= idx2 + 1) ? shaded : unshaded}
                                     />)
                                 })}
-                                <h4>{review[0].body}</h4>
-                                {sessionUser?.id === review[0].userId ? <button type='submit' onClick={handleEdit(review[0])}>Edit</button> : null}
+                                <div className="review-box-body">{review[0].body}</div>
+                                {sessionUser?.id === review[0].userId ? <button type='submit' onClick={handleEdit(review[0])} className="review-box-edit-btn">Edit</button> : null}
                             </div>
                         )
 
                     } else {
                         if (sessionUser?.id === review[0].userId && target === review[0].id) {
                             return (
-                                <div key={`${idx}-edit-review`} className='review-box'>
+                                <div key={`${idx}-edit-review`} className='edit-review__container'>
                                     <form onSubmit={handleSubmitEdit}>
-                                        <ul>
+                                        <ul className='edit-review-form-errors'>
                                             {errors.map((error, idx) => <li key={`${idx}-edit-error`}>{error}</li>)}
                                         </ul>
-                                        <label>
+                                        <label className="edit-review-title">
                                             Edit your Review:
-                                            {stars}
+                                            <span className="edit-review-stars__container">{stars}</span>
                                             <textarea
                                                 value={reviewBody || ""}
                                                 onChange={(e) => setReviewBody(e.target.value)}
                                                 rows="5"
                                                 cols="100"
-                                                className="review-edit-box"
+                                                className="edit-review-box"
                                                 name="edit-body"
                                             />
                                         </label>
-                                        <button type="submit">Edit Review</button>
+                                        <div className='edit-review-btn__container'>
+                                            <button className='review-form-btn' type="submit">Submit</button>
+                                            <button className='review-form-btn' type="reset" onClick={handleCancel}>Cancel</button>
+                                            <button className='review-form-btn delete' type="button" onClick={handleDelete}>Delete</button>
+                                        </div>
                                     </form>
-                                    <button type="submit" onClick={handleDelete}>Delete</button>
                                 </div>
                             )
 
                         }
-                        // return (<></>)
+                        return (<></>)
                     }
                 })}
             </div>
