@@ -2,31 +2,88 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     height: 300px;
-    width: auto;
-    margin: 30px 15px;
-    padding: 30px;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
+    width: 100%;
+    padding: 50px 50px;
     background-color: white;
     /* border: 1px solid red; */
+    border-bottom: 1px solid #f5be39ff;
 }
 
 .cart-product-photo {
-    height: 250px;
-    width: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    transition: all ease-in .25s;
+    z-index: 1;
+    /* border: 1px solid red; */
+}
+
+.cart-product-photo:hover {
+    transform: scale(1.2);
 }
 
 .cart-product-tile-text {
-    margin-left: 30px;
+    /* margin-left: 30px; */
+    margin-left: 2.5%;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    width: 70%;
+    z-index: 2;
 }
 
 .cart-product-tile-name {
+    /* border: 1px solid red; */
+    width: fit-content;
     font-size: 30px;
+    cursor: pointer;
+    transition: all ease-in .15s;
+}
+
+.cart-product-tile-name:hover {
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: white;
 }
 
 .cart-product-tile-price {
     font-size: 20px;
+}
+
+.cart-product-tile-subtotal {
+    width: 100%;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px
+}
+
+.cart-product-tile-quantity-select {
+    width: fit-content;
+    align-self: flex-end;
+    font-size: 20px
+}
+
+.cart-product-tile-remove-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: royalblue;
+    width: fit-content;
+    padding: 0;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.cart-product-tile-remove-btn:hover {
+    color: #ff000d;
 }

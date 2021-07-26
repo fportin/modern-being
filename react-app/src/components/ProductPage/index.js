@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import * as productActions from "../../store/products";
 import ReviewTile from "../ReviewTile"
@@ -10,8 +10,6 @@ function ProductPage() {
     const dispatch = useDispatch();
     const { productId } = useParams();
     const currentProduct = useSelector((state) => state.products.product);
-    // const sessionUser = useSelector((state) => state.session.user);
-    const history = useHistory();
 
 
     useEffect(() => {
@@ -38,7 +36,8 @@ function ProductPage() {
         } else {
             localStorage.setItem('cart', JSON.stringify(data))
         }
-        history.push('/cart')
+        const newCart = JSON.parse(localStorage.getItem('cart'))
+        dispatch(productActions.getCartProducts(newCart))
     }
 
     if (currentProduct) {
@@ -46,16 +45,18 @@ function ProductPage() {
         return (
             <div className='product-page'>
                 <div className='product-page__container'>
-                    <img src={`${currentProduct.photo}`} alt='item' className='product-photo' />
+                    <div style={{ backgroundImage: `url(${currentProduct.photo})` }} className='product-photo' />
                     <div className="product-details__container">
-                        <h1 className='product-name'>{currentProduct.name}</h1>
-                        <h4 className='product-brand'>Brand: {currentProduct.brand}</h4>
-                        <h4 className='product-price'>${formattedPrice}</h4>
+                        <div className='product-name'>{currentProduct.name}</div>
+                        <div className='product-brand'>Brand: <span className="product-brand-name">{currentProduct.brand}</span></div>
+                        <h3 className='product-price'>${formattedPrice}</h3>
                         <p className='product-description'>{currentProduct.description}</p>
-                        <button type="submit" onClick={handleAdd(currentProduct.id)}>Add to Cart</button>
+                        <button type="submit" onClick={handleAdd(currentProduct.id)} className="product-page-add-btn">Add to Cart</button>
                     </div>
                 </div>
-                <ReviewTile />
+                <div className="product-page-reviews__container">
+                    <ReviewTile />
+                </div>
             </div>
         );
     }

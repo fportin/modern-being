@@ -15,12 +15,12 @@ function Footer () {
                 </div>
                 <div className="github__container">
                     <a href="https://github.com/fportin">
-                        <img className="github-icon" src={github} />
+                        <img className="github-icon" src={github} alt="Github Icon" />
                     </a>
                 </div>
                 <div className="linkedin__container">
                     <a href="https://www.linkedin.com/in/franco-portin">
-                        <img className="linkedin-icon" src={linkedin} />
+                        <img className="linkedin-icon" src={linkedin} alt="LinkedIn Icon" />
                     </a>
                 </div>
             </div>

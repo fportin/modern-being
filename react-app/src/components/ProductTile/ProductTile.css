@@ -5,16 +5,20 @@
     justify-content: flex-start;
     height: 300px;
     width: 600px;
-    margin: 30px 15px;
+    margin: 0 15px;
+    margin-bottom: 30px;
+    padding: 1%;
     border-radius: 5px;
     overflow: hidden;
-    cursor: pointer;
     background-color: white;
+    border: 1px solid transparent;
+    transition: all ease-in 0.25s;
 }
 
 .product-tile__container:hover {
-    box-shadow: 0 10px 10px 5px #062743;
-    /* background-size: 700px 483px; */
+    border: 1px solid #f5be39ff;
+    /* box-shadow: 0 10px 10px 5px gainsboro; */
+    /* border: 1px solid gray; */
     background-position: center;
 }
 
@@ -24,16 +28,60 @@
     background-position: center;
     height: 250px;
     width: 300px;
-    /* border: 1px solid blue; */
+    cursor: pointer;
+    /* border: 1px solid red; */
 }
 
 .product-tile-text {
-    margin-left: 30px;
+    margin-left: 2.5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    height: 250px;
+    width: 60%;
+    /* border: 1px solid red; */
+}
+
+.product-tile-text-top {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    gap: 1.5%;
 }
 
 .product-tile-name {
     font-size: 18px;
+    font-weight: 700;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.product-tile-name:hover {
+    text-decoration: underline;
+}
+
+.product-tile-brand {
+    color: royalblue;
+}
+
+.product-tile-add-btn {
+    width: 125px;
+    height: 35px;
+    border: 1px solid gainsboro;
+    background: linear-gradient(to right, #ffd587ff, #cfa344ff, #9a5f00ff, #ffd699ff, #f5be39ff);
+    font-size: 18px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-tile-add-btn:hover {
     color: white;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    
+    border: 1px solid #f5f5f5;
 }

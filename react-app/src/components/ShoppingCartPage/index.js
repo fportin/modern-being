@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as productActions from "../../store/products"
@@ -18,21 +18,24 @@ function ShoppingCartPage() {
     useEffect(() => {
         const currentCart = JSON.parse(localStorage.getItem('cart'))
         if (!currentCart) {
-            return setEmptyCart(true)
+            setEmptyCart(true)
+        } else {
+            setEmptyCart(false)
         }
-        setEmptyCart(false)
         dispatch(productActions.getCartProducts(currentCart))
-    }, [dispatch, cart, emptyCart])
+    }, [dispatch, cart])
 
     const handleEmpty = (e) => {
         localStorage.removeItem('cart')
         setEmptyCart(true)
+        updateCart({})
     }
 
-    const handleCheckout = cart => (e) => {
+    const handleCheckout = cart => async(e) => {
         if (sessionUser) {
             localStorage.removeItem('cart')
             setEmptyCart(true)
+            await updateCart({})
             history.push(`/users/${sessionUser.id}/order`)
         } else {
             history.push('/login')
@@ -46,16 +49,19 @@ function ShoppingCartPage() {
         
         return (
             <div className="shopping-cart-page__container">
-                <h1>Cart</h1>
+                <div className="shopping-cart-page-title">Your Cart <button className="shopping-cart-page-empty-btn" type="button" onClick={handleEmpty}>Empty Cart</button></div>
                 <CartProductTile change={updateCart} />
-                <h1>Total: ${formattedTotal}</h1>
-                <button className="shopping-cart-page-btn" type="submit" onClick={handleEmpty}>Empty Cart</button>
+                <div className="shopping-cart-page-total">Total: ${formattedTotal}</div>
                 <button className="shopping-cart-page-btn" type="submit" onClick={handleCheckout(cartProducts)}>Checkout</button>
             </div>
         )
     }
 
-    return (<h1>Your cart is empty</h1>)
+    return (
+        <div className="shopping-cart-page__container">
+            <h1>Your cart is empty</h1>
+        </div>
+    )
 }
 
 export default ShoppingCartPage;

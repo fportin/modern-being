@@ -1,10 +1,24 @@
 .category-page__container {
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     height: fit-content;
-    min-height: 100vh;
+    min-height: calc(100vh - 190px);
     width: auto;
     background-color: white;
+}
+
+.category-page-title {
+    font-size: 35px;
+    margin: 1.5% 3%;
+    font-weight: 900;
+    width: fit-content;
+    height: fit-content;
+}
+
+.category-page-products_container {
+    box-sizing: border-box;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }

@@ -1,6 +1,13 @@
 .purchase-page {
     background-color: white;
     width: auto;
-    height: 100vh;
+    min-height: calc(100vh - 190px);
     margin: 0;
+    padding: 3% 5%;
+}
+
+.purchase-page-user-name {
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: white;
+    padding-right: 3px;
 }

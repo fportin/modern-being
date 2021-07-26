@@ -4,7 +4,7 @@
     align-items: flex-start;
     justify-content: center;
     /* border: 1px solid red; */
-    height: 100vh;
+    min-height: calc(100vh - 190px);
 }
 
 .signup-form__container {
@@ -19,6 +19,7 @@
     width: 550px;
     height: 600px;
     margin-top: 50px;
+    margin-bottom: 50px;
     position: relative;
 }
 
