@@ -7,7 +7,7 @@ import shaded from "../../images/shade-star.png"
 import unshaded from "../../images/unshade-star.png"
 import "./ReviewTile.css"
 
-function ReviewTile() {
+function ReviewTile({ submitted }) {
     const dispatch = useDispatch();
     const currentProduct = useSelector((state) => state.products.product)
     const sessionUser = useSelector((state) => state.session.user);
@@ -41,6 +41,7 @@ function ReviewTile() {
                 return setErrors(data.errors)
             } else {
                 setEditReview(false)
+                submitted({})
                 return
             }
         }
@@ -61,6 +62,7 @@ function ReviewTile() {
                 return setErrors(data.errors)
             } else {
                 setEditReview(false)
+                submitted({})
                 return
             }
         }
@@ -95,7 +97,7 @@ function ReviewTile() {
         return (
             <div className="reviews__container">
                 <div className='review-title'>Reviews:</div>
-                <ReviewForm edit={editReview} updater={setPageRefresh} />
+                <ReviewForm edit={editReview} updater={setPageRefresh} submit={submitted} />
                 {availableReviews.map((review, idx) => {
                     if (!editReview) {
                         return (

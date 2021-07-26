@@ -12,6 +12,7 @@ function CartProductTile({change}) {
 
     const handleClick = productId => (e) => {
         e.preventDefault();
+        window.scrollTo(0, 0)
         history.push(`/products/${productId}`)
     }
 
@@ -51,7 +52,7 @@ function CartProductTile({change}) {
                             <div className='cart-product-photo' style={{ backgroundImage: `url(${product.photo})` }} onClick={handleClick(product.id)}></div>
                             <div className="cart-product-tile-text">
                                 <div className="cart-product-tile-name" onClick={handleClick(product.id)}>{product.name}</div>
-                                <div className="cart-product-tile-price">${product.price.toFixed(2)}</div>
+                                <div className="cart-product-tile-price">{product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</div>
                                 <label key={product.id} className="cart-product-tile-quantity-select">
                                     Quantity: 
                                         <select value={target === product.id ? quantity : product.quantity} onChange={handleQuantity(product.id)}>
@@ -67,7 +68,7 @@ function CartProductTile({change}) {
                                         <option value="10">10</option>
                                     </select>
                                 </label>
-                                <div className="cart-product-tile-subtotal">Item Subtotal: ${product.subtotal.toFixed(2)}</div>
+                                <div className="cart-product-tile-subtotal">Item Subtotal: {product.subtotal.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</div>
                                 <button type="button" className="cart-product-tile-remove-btn" onClick={handleRemove(product.id)}>Remove</button>
                             </div>
                         </div>
