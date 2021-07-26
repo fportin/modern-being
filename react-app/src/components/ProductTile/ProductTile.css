@@ -63,10 +63,38 @@
 
 .product-tile-name:hover {
     text-decoration: underline;
+    color: #f5be39ff;
 }
 
 .product-tile-brand {
     color: royalblue;
+}
+
+.product-tile-price {
+    margin-top: 5%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product-tile-rating {
+    margin-top: 5%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+}
+
+.product-tile-rating-reviewers {
+    margin-left: 2%;
+    color: royalblue;
+    cursor: pointer;
+}
+
+.product-tile-rating-reviewers:hover {
+    text-decoration: underline;
+    color: #f5be39ff;
 }
 
 .product-tile-add-btn {

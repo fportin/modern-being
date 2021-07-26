@@ -53,6 +53,26 @@
     font-weight: 700;
 } */
 
+.product-rating {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1%;
+}
+
+.product-rating-reviewers {
+    margin-left: 2%;
+    color: royalblue;
+    cursor: pointer;
+}
+
+.product-rating-reviewers:hover {
+    text-decoration: underline;
+    color: #f5be39ff;
+}
+
 .product-page-add-btn {
     margin-top: 5%;
     width: 150px;

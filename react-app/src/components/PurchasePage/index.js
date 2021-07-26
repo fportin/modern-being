@@ -12,6 +12,7 @@ const PurchasePage = () => {
     useEffect(() => {
         if (sessionUser) {
             const timeout = setTimeout(() => {
+                window.scrollTo(0, 0)
                 history.push("/");
             }, 3000)
             return () => clearTimeout(timeout);

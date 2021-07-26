@@ -18,6 +18,7 @@ function CategoryTile() {
 
     const handleClick = categoryId => (e) => {
         e.preventDefault();
+        window.scrollTo(0, 0)
         history.push(`/categories/${categoryId}`)
     }
 

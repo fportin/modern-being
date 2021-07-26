@@ -44,14 +44,14 @@ function ShoppingCartPage() {
 
 
     if (cartProducts && !emptyCart) {
-        const formattedTotal = cartProducts.total.toFixed(2)
+        const formattedTotal = cartProducts.total.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
         
         
         return (
             <div className="shopping-cart-page__container">
                 <div className="shopping-cart-page-title">Your Cart <button className="shopping-cart-page-empty-btn" type="button" onClick={handleEmpty}>Empty Cart</button></div>
                 <CartProductTile change={updateCart} />
-                <div className="shopping-cart-page-total">Total: ${formattedTotal}</div>
+                <div className="shopping-cart-page-total">Total: {formattedTotal}</div>
                 <button className="shopping-cart-page-btn" type="submit" onClick={handleCheckout(cartProducts)}>Checkout</button>
             </div>
         )

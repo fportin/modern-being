@@ -7,7 +7,7 @@ import shaded from "../../images/shade-star.png"
 import unshaded from "../../images/unshade-star.png"
 import './ReviewForm.css';
 
-function ReviewForm({ edit, updater }) {
+function ReviewForm({ edit, updater, submit }) {
     const dispatch = useDispatch()
     const history = useHistory()
     const currentProduct = useSelector((state) => state.products.product)
@@ -43,6 +43,7 @@ function ReviewForm({ edit, updater }) {
                 setReviewBody('')
                 setReviewActive(false)
                 updater({})
+                submit({})
                 return
             }
         }
