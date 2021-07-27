@@ -1,6 +1,6 @@
 # Modern-Being
 
-Modern-Being is an consumer electronics e-commerce site.
+Modern-Being is a consumer electronics e-commerce site.
 
 # Screenshots:
 
