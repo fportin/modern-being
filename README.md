@@ -1,14 +1,14 @@
 # Modern-Being
 
-Modern-Being is an consumer electronics e-commerce site.
+Modern-Being is a consumer electronics e-commerce site that appeals to the visionary in you.
 
 # Screenshots:
 
-<img width="1920" alt="Screen Shot 2021-06-14 at 7 33 22 AM" src="https://user-images.githubusercontent.com/73340706/121914431-1c586980-cce7-11eb-8547-50fcfd11791c.png">
+<img width="1920" alt="modern-being-home" src="https://user-images.githubusercontent.com/73340706/127824952-6590b23a-80e1-4a56-a42f-19449450b20d.png">
 
-<img width="1920" alt="Screen Shot 2021-06-14 at 7 33 39 AM" src="https://user-images.githubusercontent.com/73340706/121914699-5cb7e780-cce7-11eb-9155-576e145b8280.png">
+<img width="1920" alt="modern-being-category" src="https://user-images.githubusercontent.com/73340706/127825024-514b0bfb-4270-49b1-a665-d8a0a819d920.png">
 
-<img width="1920" alt="Screen Shot 2021-06-14 at 7 35 05 AM" src="https://user-images.githubusercontent.com/73340706/121914823-7a854c80-cce7-11eb-84a2-d4295594fb35.png">
+<img width="1920" alt="modern-being-search" src="https://user-images.githubusercontent.com/73340706/127825090-f3ce9d7d-0784-4628-844c-f6b0977ce3b9.png">
 
 
 # Technologies:
@@ -38,7 +38,8 @@ Modern-Being is an consumer electronics e-commerce site.
 * Users could checkout the products in their shopping cart.
 
 # Reviews:
-* Star rating is implemented as well as product review text.
+* Star rating is implemented along with the Product Review text.
+* Submitted Reviews are used to effectively compute a Product's Rating.
 * Logged-in user can review a Product listing.
 * Logged-in user can delete or edit his review.
 
