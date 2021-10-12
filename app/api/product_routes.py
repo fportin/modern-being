@@ -63,7 +63,5 @@ def search_products():
         current_product['reviewers'] = reviewers
         product_list.append(current_product)
     complete_list = {"matchingProducts": product_list}
-    print("TERM!!!", term)
-    print("PROD!!!", products)
-    print("COM!!!!",complete_list)
+    # print(complete_list)
     return complete_list
