@@ -24,13 +24,16 @@ function Searchbar({ search, searchOn }) {
 
         if (searchActive) {
             if (searchTerm) {
-                dispatch(productActions.searchProducts(searchTerm));
-                history.push({
-                    pathname: "/search",
-                    state: {
-                        searchTerm: searchTerm,
-                    },
-                });
+                const timeout = setTimeout(() => {
+                    dispatch(productActions.searchProducts(searchTerm));
+                    history.push({
+                        pathname: "/search",
+                        state: {
+                            searchTerm: searchTerm,
+                        },
+                    });
+                }, 500)
+                return () => clearTimeout(timeout)
             } else if (!searchTerm && location.pathname === '/search') {
                 history.push("/");
             }
