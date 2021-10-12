@@ -51,9 +51,9 @@ def get_cart_products():
 def search_products():
     data = request.json
     term = data['searchTerm']
-    products = db.session.query(Product).join(Product.categories).filter(Category.type.ilike(f'%{term}%') | Product.brand.ilike(f'%{term}%') | Product.name.ilike(f'%{term}%')).all()
+    products = db.session.query(Product).join(Product.categories).filter(Category.type.ilike(f'%{term}%') | Product.brand.ilike(f'% {term} %') | Product.name.ilike(f'% {term} %')).all()
     if not products:
-        products = db.session.query(Product).filter(Product.description.ilike(f'%{term}%')).all()
+        products = db.session.query(Product).filter(Product.description.ilike(f'% {term} %')).all()
     product_reviews = [(product, db.session.query(Review).filter(product.id == Review.productId).all()) for product in products]
     products_with_ratings = [(product.to_dict(), round(sum([review.rating for review in reviews])/len(reviews), 1), len(reviews)) for (product, reviews) in product_reviews]
     product_list = []
@@ -63,5 +63,7 @@ def search_products():
         current_product['reviewers'] = reviewers
         product_list.append(current_product)
     complete_list = {"matchingProducts": product_list}
-    # print(complete_list)
+    print("TERM!!!", term)
+    print("PROD!!!", products)
+    print("COM!!!!",complete_list)
     return complete_list
