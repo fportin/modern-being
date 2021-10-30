@@ -47,7 +47,7 @@ const NavBar = () => {
         <> 
           <NavLink to='/categories/11' className='computing-nav' style={{ textDecoration: 'none' }}>Computing</NavLink>
           <NavLink to='/categories/12' className='mobile-nav' style={{ textDecoration: 'none' }}>Mobile</NavLink>
-          <NavLink to='/categories/13' className='wearable-nav' style={{ textDecoration: 'none' }}>Wearables</NavLink>
+          <NavLink to='/categories/13' className='wearable-nav' style={{ textDecoration: 'none' }}>Wearable</NavLink>
           <NavLink to='/categories/14' className='audio-nav' style={{ textDecoration: 'none' }}>Audio</NavLink>
         </> 
         : null
